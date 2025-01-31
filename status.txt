@@ -1,0 +1,30 @@
+Bu kodlar HTTP status kodlari bo'lib, ular veb-server va brauzer (yoki boshqa mijoz dasturlari) o'rtasida qanday javob berilganini bildiradi. HTTP status kodlari 5 ta asosiy toifaga bo'linadi:
+
+ - 1xx (Informational - Ma'lumot beruvchi): So‘rov qabul qilingan va qayta ishlanmoqda.
+ - 2xx (Success - Muvaffaqiyatli): So‘rov muvaffaqiyatli bajarilgan.
+ - 3xx (Redirection - Yo‘naltirish): Mijoz boshqa joyga yo‘naltirilishi kerak.
+ - 4xx (Client Error - Mijoz xatosi): Mijoz noto‘g‘ri so‘rov yuborgan.
+ - 5xx (Server Error - Server xatosi): Server so‘rovni bajara olmadi.
+
+## ✅ 2xx - Muvaffaqiyatli (Success)
+ - 200 OK – So‘rov muvaffaqiyatli bajarildi.
+ - 201 Created – Yangi resurs muvaffaqiyatli yaratildi.
+ - 202 Accepted – So‘rov qabul qilindi, lekin hali bajarilmadi.
+ - 204 No Content – Javobda hech qanday ma’lumot yo‘q, lekin so‘rov muvaffaqiyatli bajarildi.
+
+## 🔄 3xx - Yo‘naltirish (Redirection)
+ - 301 Moved Permanently – Resurs doimiy ravishda boshqa manzilga ko‘chirildi.
+ - 302 Found – Resurs vaqtincha boshqa manzilga ko‘chirildi.
+ - 304 Not Modified – Resurs o‘zgarmagan (keshlangan versiya ishlatilishi mumkin).
+
+## ❌ 4xx - Mijoz xatosi (Client Error)
+ - 400 Bad Request – Noto‘g‘ri so‘rov yuborildi.
+ - 401 Unauthorized – Foydalanuvchi autentifikatsiyadan o‘tmagan.
+ - 403 Forbidden – Foydalanuvchiga ushbu resursga ruxsat berilmagan.
+ - 404 Not Found – So‘ralgan resurs topilmadi.
+
+## ⚠️ 5xx - Server xatosi (Server Error)
+ - 500 Internal Server Error – Serverda ichki xatolik yuz berdi.
+ - 502 Bad Gateway – Server boshqa serverdan noto‘g‘ri javob oldi.
+ - 503 Service Unavailable – Server vaqtincha ishlamayapti.
+ - 504 Gateway Timeout – Server boshqa serverdan javob kutishda vaqt tugadi.
