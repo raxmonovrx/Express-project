@@ -63,12 +63,14 @@ class product {
 	async addProduct(req, res) {
 		const { name, category, price, brand } = req.body
 
+		const createdAt = new Date().toISOString()
 		const product = {
 			id: uuidv4(),
 			name,
 			category,
 			price,
 			brand,
+			created: createdAt,
 		}
 
 		data.push(product)
@@ -82,7 +84,9 @@ class product {
 
 	// update product by id
 	async updateProduct(req, res) {
+		console.log(req.params)
 		const { name, category, price, brand } = req.body
+
 		const product = data.find(product => product.id === req.params.id)
 		if (!product) return res.status(404).send('Product not found')
 
@@ -112,7 +116,7 @@ class product {
 		const product = data.find(product => product.id === req.params.id)
 		if (!product) return res.status(404).send('Product not found')
 
-		index = data.indexOf(product)
+		const index = data.indexOf(product)
 
 		data.splice(index, 1)
 

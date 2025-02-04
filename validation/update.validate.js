@@ -3,9 +3,6 @@ const updateValidation = (req, res, next) => {
 	let errors = []
 	const validCategories = ['food', 'technology', 'clothing']
 
-	// ========================================================
-	// ========================================================
-
 	// Name validation for update (only if provided)
 	if (name !== undefined) {
 		if (name.trim() === '') {
@@ -21,9 +18,6 @@ const updateValidation = (req, res, next) => {
 		}
 	}
 
-	// ========================================================
-	// ========================================================
-
 	// Category validation for update (only if provided)
 	if (category !== undefined) {
 		if (category.trim() === '') {
@@ -38,9 +32,6 @@ const updateValidation = (req, res, next) => {
 			})
 		}
 	}
-
-	// ========================================================
-	// ========================================================
 
 	// Price validation for update (only if provided)
 	if (price !== undefined) {
@@ -62,9 +53,6 @@ const updateValidation = (req, res, next) => {
 		}
 	}
 
-	// ========================================================
-	// ========================================================
-
 	// Brand validation for update (only if provided)
 	if (brand !== undefined) {
 		if (brand.trim() === '') {
@@ -79,9 +67,6 @@ const updateValidation = (req, res, next) => {
 			})
 		}
 	}
-
-	// ========================================================
-	// ========================================================
 
 	// If errors exist, return them
 	if (errors.length > 0) {

@@ -1,0 +1,16 @@
+[
+	{
+		"id": 1,
+		"name": "FarruXbek",
+		"email": "test@gamil.com",
+		"password": "$2a$10$11xdvA3TzZPX6pYKIgt1YufkYF5E93djEaVdmRvFdgkSR.DoKG8EK",
+		"role": "admin"
+	},
+	{
+		"id": 2,
+		"name": "John",
+		"email": "test1@gamil.com",
+		"password": "$2a$10$jvRDY2/eea8rELOfgBFtDO5F.MlFmlBLMbcEJdjrP0cq2OqdnRtZu",
+		"role": "admin"
+	}
+]

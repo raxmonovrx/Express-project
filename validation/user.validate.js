@@ -1,8 +1,5 @@
 const userValidation = (req, res, next) => {
 	const { name, category, price, brand } = req.body
-	req.body.name = req.body.name.trim()
-	req.body.category = req.body.category.trim()
-	req.body.brand = req.body.brand.trim()
 
 	let errors = []
 	const validCategories = ['food', 'technology', 'clothing']
@@ -18,6 +15,11 @@ const userValidation = (req, res, next) => {
 			field: 'name',
 			message: 'Name must be a string!',
 		})
+	} else if (name.length < 3 || name.length > 30) {
+		errors.push({
+			field: 'name',
+			message: 'Name must be more than 3 and less than 30 characters!',
+		})
 	}
 
 	// Category validation
@@ -26,9 +28,7 @@ const userValidation = (req, res, next) => {
 			field: 'category',
 			message: 'Category is required!',
 		})
-	}
-
-	if (!validCategories.includes(category)) {
+	} else if (!validCategories.includes(category)) {
 		errors.push({
 			field: 'category',
 			message: `Category must be one of: ${validCategories.join(', ')}`,
@@ -41,14 +41,12 @@ const userValidation = (req, res, next) => {
 			field: 'price',
 			message: 'Price is required.',
 		})
-	}
-	if (typeof price !== 'number') {
+	} else if (typeof price !== 'number') {
 		errors.push({
 			ield: 'price',
 			message: 'Price must be a number.',
 		})
-	}
-	if (price <= 0) {
+	} else if (price <= 0) {
 		errors.push({
 			field: 'price',
 			message: 'Price must be greater than 0.',
@@ -61,9 +59,7 @@ const userValidation = (req, res, next) => {
 			field: 'brand',
 			message: 'Brand is required!',
 		})
-	}
-
-	if (typeof brand !== 'string') {
+	} else if (typeof brand !== 'string' || brand.trim() === '') {
 		errors.push({
 			field: 'brand',
 			message: 'Brand must be a string!',
